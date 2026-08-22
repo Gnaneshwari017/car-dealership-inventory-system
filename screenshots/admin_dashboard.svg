@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" fill="#020617" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#020617"/>
+  
+  <!-- Navbar -->
+  <rect x="0" y="0" width="1200" height="70" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <rect x="30" y="15" width="40" height="40" rx="10" fill="#10b981"/>
+  <text x="80" y="42" fill="#ffffff" font-size="20" font-weight="900" letter-spacing="1">APEX <tspan fill="#38bdf8">MOTORS</tspan></text>
+  <text x="80" y="55" fill="#64748b" font-size="9" font-weight="700" letter-spacing="1">DEALERSHIP INVENTORY</text>
+  
+  <!-- Nav links -->
+  <text x="330" y="40" fill="#94a3b8" font-size="13" font-weight="500">Dashboard</text>
+  <rect x="420" y="18" width="120" height="34" rx="8" fill="#1e1b4b" stroke="#6366f1" stroke-width="1"/>
+  <text x="440" y="40" fill="#c7d2fe" font-size="13" font-weight="700">Admin Portal</text>
+  
+  <!-- Nav right admin profile -->
+  <rect x="990" y="18" width="175" height="34" rx="8" fill="#065f46"/>
+  <text x="1010" y="40" fill="#ffffff" font-size="12" font-weight="700">Staff Admin (ADMIN)</text>
+
+  <!-- Admin Title & Actions -->
+  <g transform="translate(30, 95)">
+    <text x="0" y="25" fill="#ffffff" font-size="24" font-weight="900">Admin Inventory Console</text>
+    <text x="0" y="45" fill="#94a3b8" font-size="12">Manage catalog listings, restock counts, and vehicle specifications</text>
+    
+    <rect x="990" y="5" width="150" height="42" rx="12" fill="url(#adminGrad)"/>
+    <text x="1025" y="31" fill="#020617" font-size="13" font-weight="800">+ New Vehicle</text>
+  </g>
+
+  <!-- Admin KPI Metrics -->
+  <g transform="translate(30, 165)">
+    <rect x="0" y="0" width="360" height="85" rx="16" fill="#0f172a" stroke="#1e293b"/>
+    <text x="20" y="30" fill="#94a3b8" font-size="11" font-weight="700">TOTAL INVENTORY VALUE</text>
+    <text x="20" y="65" fill="#ffffff" font-size="26" font-weight="900">$1,638,380</text>
+
+    <rect x="390" y="0" width="360" height="85" rx="16" fill="#0f172a" stroke="#1e293b"/>
+    <text x="410" y="30" fill="#94a3b8" font-size="11" font-weight="700">TOTAL IN-STOCK UNITS</text>
+    <text x="410" y="65" fill="#34d399" font-size="26" font-weight="900">41 Units Ready</text>
+
+    <rect x="780" y="0" width="360" height="85" rx="16" fill="#0f172a" stroke="#1e293b"/>
+    <text x="800" y="30" fill="#94a3b8" font-size="11" font-weight="700">RESTOCK ALERTS</text>
+    <text x="800" y="65" fill="#f87171" font-size="26" font-weight="900">1 Sold Out Item</text>
+  </g>
+
+  <!-- Admin Table -->
+  <g transform="translate(30, 275)">
+    <rect width="1140" height="490" rx="20" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+    
+    <!-- Table Header -->
+    <rect width="1140" height="50" rx="20" fill="#020617"/>
+    <text x="30" y="30" fill="#64748b" font-size="11" font-weight="800">ID</text>
+    <text x="100" y="30" fill="#64748b" font-size="11" font-weight="800">VEHICLE</text>
+    <text x="450" y="30" fill="#64748b" font-size="11" font-weight="800">CATEGORY</text>
+    <text x="600" y="30" fill="#64748b" font-size="11" font-weight="800">PRICE</text>
+    <text x="750" y="30" fill="#64748b" font-size="11" font-weight="800">STOCK STATUS</text>
+    <text x="1000" y="30" fill="#64748b" font-size="11" font-weight="800">ACTIONS</text>
+
+    <!-- Row 1: Toyota Camry -->
+    <line x1="0" y1="50" x2="1140" y2="50" stroke="#1e293b"/>
+    <text x="30" y="88" fill="#64748b" font-family="monospace">#1</text>
+    <text x="100" y="88" fill="#ffffff" font-size="13" font-weight="700">Toyota Camry XSE</text>
+    <text x="450" y="88" fill="#94a3b8" font-size="12">Sedan</text>
+    <text x="600" y="88" fill="#ffffff" font-size="13" font-weight="700">$28,500</text>
+    <rect x="750" y="70" width="90" height="24" rx="12" fill="#064e3b"/>
+    <text x="765" y="86" fill="#6ee7b7" font-size="11" font-weight="700">7 UNITS</text>
+    <!-- Action buttons -->
+    <rect x="960" y="70" width="40" height="26" rx="6" fill="#064e3b"/>
+    <text x="972" y="87" fill="#34d399" font-size="11" font-weight="700">+</text>
+    <rect x="1010" y="70" width="40" height="26" rx="6" fill="#1e293b"/>
+    <text x="1022" y="87" fill="#cbd5e1" font-size="11">✏️</text>
+    <rect x="1060" y="70" width="40" height="26" rx="6" fill="#881337"/>
+    <text x="1072" y="87" fill="#fca5a5" font-size="11">🗑️</text>
+
+    <!-- Row 2: Porsche 911 -->
+    <line x1="0" y1="115" x2="1140" y2="115" stroke="#1e293b"/>
+    <text x="30" y="153" fill="#64748b" font-family="monospace">#7</text>
+    <text x="100" y="153" fill="#ffffff" font-size="13" font-weight="700">Porsche 911 Carrera S</text>
+    <text x="450" y="153" fill="#94a3b8" font-size="12">Sports</text>
+    <text x="600" y="153" fill="#ffffff" font-size="13" font-weight="700">$123,000</text>
+    <rect x="750" y="135" width="90" height="24" rx="12" fill="#78350f"/>
+    <text x="765" y="151" fill="#fde68a" font-size="11" font-weight="700">2 UNITS (LOW)</text>
+    <!-- Action buttons -->
+    <rect x="960" y="135" width="40" height="26" rx="6" fill="#064e3b"/>
+    <text x="972" y="152" fill="#34d399" font-size="11" font-weight="700">+</text>
+    <rect x="1010" y="135" width="40" height="26" rx="6" fill="#1e293b"/>
+    <text x="1022" y="152" fill="#cbd5e1" font-size="11">✏️</text>
+    <rect x="1060" y="135" width="40" height="26" rx="6" fill="#881337"/>
+    <text x="1072" y="152" fill="#fca5a5" font-size="11">🗑️</text>
+
+    <!-- Row 3: Mercedes EQS (Sold out) -->
+    <line x1="0" y1="180" x2="1140" y2="180" stroke="#1e293b"/>
+    <text x="30" y="218" fill="#64748b" font-family="monospace">#9</text>
+    <text x="100" y="218" fill="#ffffff" font-size="13" font-weight="700">Mercedes-Benz EQS 450+</text>
+    <text x="450" y="218" fill="#94a3b8" font-size="12">Electric</text>
+    <text x="600" y="218" fill="#ffffff" font-size="13" font-weight="700">$104,400</text>
+    <rect x="750" y="200" width="105" height="24" rx="12" fill="#881337"/>
+    <text x="762" y="216" fill="#fca5a5" font-size="11" font-weight="700">0 UNITS (OUT)</text>
+    <!-- Action buttons -->
+    <rect x="960" y="200" width="40" height="26" rx="6" fill="#064e3b"/>
+    <text x="972" y="217" fill="#34d399" font-size="11" font-weight="700">+</text>
+    <rect x="1010" y="200" width="40" height="26" rx="6" fill="#1e293b"/>
+    <text x="1022" y="217" fill="#cbd5e1" font-size="11">✏️</text>
+    <rect x="1060" y="200" width="40" height="26" rx="6" fill="#881337"/>
+    <text x="1072" y="217" fill="#fca5a5" font-size="11">🗑️</text>
+  </g>
+
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="adminGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+</svg>
