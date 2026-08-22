@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
 from app.core.database import Base, engine
-from app.routers import auth
+from app.routers import auth, vehicles
 
 # Initialize tables
 Base.metadata.create_all(bind=engine)
@@ -23,6 +23,7 @@ app.add_middleware(
 )
 
 app.include_router(auth.router, prefix=settings.API_V1_STR)
+app.include_router(vehicles.router, prefix=settings.API_V1_STR)
 
 @app.get('/health', tags=['Health'])
 def health_check():
