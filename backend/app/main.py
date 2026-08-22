@@ -2,13 +2,15 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
 from app.core.database import Base, engine
-from app.routers import auth, vehicles
+from app.routers import auth, vehicles, inventory
 
 # Initialize tables
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
+    description='Production-grade RESTful API for the Apex Motors Car Dealership Inventory System.',
+    version='1.0.0',
     openapi_url=f'{settings.API_V1_STR}/openapi.json',
     docs_url='/docs',
     redoc_url='/redoc'
@@ -24,6 +26,7 @@ app.add_middleware(
 
 app.include_router(auth.router, prefix=settings.API_V1_STR)
 app.include_router(vehicles.router, prefix=settings.API_V1_STR)
+app.include_router(inventory.router, prefix=settings.API_V1_STR)
 
 @app.get('/health', tags=['Health'])
 def health_check():
