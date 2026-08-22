@@ -2,8 +2,9 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
 from app.core.database import Base, engine
+from app.routers import auth
 
-# Ensure tables are created on startup if using direct database initialization
+# Initialize tables
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
@@ -13,7 +14,6 @@ app = FastAPI(
     redoc_url='/redoc'
 )
 
-# Set up CORS middleware
 app.add_middleware(
     CORSMiddleware,
     allow_origins=['*'] if '*' in settings.CORS_ORIGINS else settings.CORS_ORIGINS,
@@ -21,6 +21,8 @@ app.add_middleware(
     allow_methods=['*'],
     allow_headers=['*'],
 )
+
+app.include_router(auth.router, prefix=settings.API_V1_STR)
 
 @app.get('/health', tags=['Health'])
 def health_check():
