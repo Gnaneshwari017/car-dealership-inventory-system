@@ -1,12 +1,14 @@
-﻿# Python
+# Python
 __pycache__/
 *.py[cod]
-*.class
+*$py.class
 .pytest_cache/
 .coverage
 htmlcov/
 *.sqlite3
+*.db
 dealership.db
+test_dealership.db
 .venv/
 env/
 venv/
