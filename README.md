@@ -238,6 +238,13 @@ Latest local verification for this documentation update:
 | --- | --- |
 | Backend (`python -m pytest -q`) | 44 passed |
 | Frontend (`npm test`) | 7 test files passed; 27 tests passed |
+|Overall Result|
+| --- | --- |
+| Test Suite |  Tests | Result          |
+| ---------- | -----: | --------------- |
+| Backend    |     44 | ✅ Passed        |
+| Frontend   |     27 | ✅ Passed        |
+| **Total**  | **71** | **✅ 71 Passed** |
 
 ## 📚 API Endpoints Reference
 
@@ -352,10 +359,36 @@ car-dealership-inventory-system/
 
 ![Purchase Vehicle](screenshots/purchase_vehicle.png)
 
-## 🤖 AI Usage
+ ## 🤖 My AI Usage
 
-AI tools were used as development assistants for architecture planning, backend and frontend implementation, TDD test generation, debugging, API and UI development, Git/GitHub guidance, and documentation. The implementation and generated output were reviewed and tested by the project author.
+### AI Tools Used
 
+I used AI development tools during this project, primarily Gemini and ChatGPT.
+
+### How I Used AI
+
+AI tools were used to assist with:
+
+- Project architecture and folder structure planning.
+- FastAPI backend implementation and API design.
+- JWT authentication and authorization.
+- SQLAlchemy models and database configuration.
+- Writing and improving backend unit and integration tests.
+- React and TypeScript component development.
+- Tailwind CSS UI implementation.
+- Debugging frontend and backend errors.
+- API integration and Axios configuration.
+- Git and GitHub workflow guidance.
+- README and project documentation preparation.
+- Reviewing test failures and troubleshooting implementation issues.
+
+### My Responsibility
+
+AI was used as a development assistant rather than as a replacement for understanding the implementation. I reviewed the generated code, integrated the changes into the project, ran the application locally, executed the automated test suites, debugged failures, and verified the final functionality.
+
+### Reflection
+
+Using AI significantly accelerated development and debugging, particularly when working through API integration, testing, frontend issues, and Git workflows. It also helped me explore alternative implementations quickly. However, I remained responsible for validating the generated code, understanding the implementation, testing the application, and making the final engineering decisions.
 ## 🔗 GitHub Repository
 
 <https://github.com/Gnaneshwari017/car-dealership-inventory-system>
