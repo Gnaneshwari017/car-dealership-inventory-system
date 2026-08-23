@@ -1,127 +1,209 @@
-# 📜 AI Interaction & Prompt History: Car Dealership Inventory System
+# PROMPTS
 
-This document contains the raw prompts and AI interactions utilized during the design, development, testing, and deployment preparation of the **Apex Motors Car Dealership Inventory System**.
-
----
-
-## Master Assignment Prompt
-
-```
-TDD KATA — COMPLETE CAR DEALERSHIP INVENTORY SYSTEM
-
-You are my senior full-stack engineer and autonomous development agent.
-
-I am completing a technical hiring assignment for Incubyte. The final project will be reviewed by engineers, so this must be a genuine, production-quality implementation — not a demo, mockup, or collection of generated files.
-
-Your responsibility is to BUILD, TEST, DEBUG, DOCUMENT, and DEPLOY the complete application.
-
-Build a full-stack:
-Car Dealership Inventory System
-
-Backend:
-- RESTful API (Python FastAPI, SQLAlchemy, Alembic, PostgreSQL, Pydantic, JWT, Bcrypt)
-- User registration & login with JWT
-- Role-based authorization (USER vs ADMIN)
-- Vehicle CRUD, search, filtering
-- Concurrency-safe atomic purchase & restock
-- Persistent database
-
-Frontend:
-- React SPA (Vite, TypeScript, Tailwind CSS, React Router, Axios, Vitest, React Testing Library)
-- Registration & login
-- Vehicle dashboard & live metrics
-- Multi-factor search & filter
-- Purchase flow (disabled on 0 inventory)
-- Admin management console (Add, Edit, Delete, Restock)
-
-Practices:
-- Strict TDD (Red -> Green -> Refactor)
-- Git version control with meaningful progression
-- Clean Architecture & SOLID principles
-- Complete test suites & test reporting
-- AI transparency & documentation
-```
+This file contains the main prompts used during the development of the Car Dealership Inventory System and the corresponding outputs/results.
 
 ---
 
-## Development Sequence & Prompts
+## Prompt 1 — Create the Car Dealership Inventory System
 
-### Phase 1: Environment Inspection & Core Architecture
-```
-Inspect environment (Python, Node, npm, git, docker, postgresql).
-Set up monorepo structure with backend/ (FastAPI, SQLAlchemy, Alembic, Pytest) and frontend/ (React, Vite, TypeScript, Tailwind CSS, Vitest).
-Configure .gitignore to protect secrets, database files, and build artifacts.
-```
+### Prompt
 
-### Phase 2: Security, Models & Database Configuration (TDD)
-```
-Write unit tests for Bcrypt password hashing, JWT token encoding, token expiration, and claims verification.
-Define SQLAlchemy models for:
-1. User (id, name, email unique, password_hash, role USER/ADMIN, timestamps)
-2. Vehicle (id, make, model, category, price > 0, quantity >= 0, year, vin, imageUrl, description, timestamps)
-3. Purchase (id, vehicle_id FK, user_id FK, quantity, unit_price, total_price, created_at)
-Configure Alembic migration environment and initial schema revision 001_initial_schema.py.
-```
+> Create a full-stack Car Dealership Inventory System for Apex Motors.
+>
+> Build the backend using FastAPI and the frontend using React with TypeScript.
+>
+> The application should include:
+> - User registration and login
+> - JWT authentication
+> - Role-based access control
+> - Vehicle CRUD operations
+> - Vehicle search and filtering
+> - Vehicle purchase and restock functionality
+> - Database integration
+> - Responsive dashboard and vehicle catalog
+> - Proper error handling
+> - Automated tests
+>
+> Follow clean architecture, modular components, REST API principles, and good coding practices.
 
-### Phase 3: Authentication & Authorization Endpoints (TDD)
-```
-Write Pytest integration tests for:
-- POST /api/auth/register (success, duplicate email 409, invalid email 422, short password 422)
-- POST /api/auth/login (success with JWT token return, incorrect password 401, non-existent user 401)
-- GET /api/auth/me (valid token returns profile, missing token returns 401)
-Implement UserRepository, AuthService, and auth routers to make all tests pass green.
-```
+### Answer / Result
 
-### Phase 4: Vehicle CRUD & Search API (TDD)
-```
-Write Pytest integration tests for:
-- POST /api/vehicles (auth required, reject price <= 0, reject quantity < 0, 201 Created)
-- GET /api/vehicles (list with pagination)
-- GET /api/vehicles/search (case-insensitive make/model, category, min_price, max_price, in_stock_only)
-- PUT /api/vehicles/:id (update specifications, 404 for invalid ID)
-- DELETE /api/vehicles/:id (Admin only: 200 OK for ADMIN, 403 Forbidden for normal USER)
-Implement VehicleRepository and VehicleService with clean query builder logic.
-```
+The complete full-stack Car Dealership Inventory System was implemented with:
 
-### Phase 5: Concurrency-Safe Purchases & Restocking (TDD)
-```
-Write concurrency boundary tests:
-- Simulating parallel purchases on vehicle with quantity = 1 (assert exactly 1 succeeds and stock reaches 0 without negative numbers).
-- POST /api/vehicles/:id/purchase (atomic update where quantity >= 1, create purchase audit record).
-- POST /api/vehicles/:id/restock (Admin only, restock quantity > 0, reject non-admin 403).
-Implement atomic SQL decrement in repository and transaction management in InventoryService.
-```
+- FastAPI backend
+- React + TypeScript frontend
+- SQLite database
+- JWT authentication
+- Password hashing
+- ADMIN and USER roles
+- Vehicle CRUD APIs
+- Vehicle search and filtering
+- Purchase and restock operations
+- Responsive dashboard
+- Vehicle catalog
+- API integration
+- Backend and frontend tests
 
-### Phase 6: Frontend Pages, Components & React Router
-```
-Build modular React SPA with React Router:
-- Pages: /login, /register, /dashboard, /admin.
-- Components: Navbar (with 1-click Demo Buyer/Admin switchers), HeroStats (real-time KPIs), FilterBar, SearchBar, VehicleGrid, VehicleCard, LoginForm, RegisterForm, VehicleModal, RestockModal, ConfirmDialog, LoadingSpinner, ErrorMessage, Toast.
-- API Client: Axios instance with Bearer token interceptor and centralized error formatting.
-```
-
-### Phase 7: Frontend Component Testing (Vitest + RTL)
-```
-Write comprehensive test suites for:
-- LoginForm.test.tsx (rendering, input change, valid login, error alert, demo fill)
-- RegisterForm.test.tsx (rendering, password length validation, password matching, role selection)
-- VehicleCard.test.tsx (stock badges, price formatting, purchase button, zero stock disabled state, admin buttons)
-- FilterBar.test.tsx (search query input, category pills, price range, in-stock toggle, reset)
-- VehicleGrid.test.tsx (loading skeletons, empty state, vehicle card mapping)
-- AdminPage.test.tsx (admin guard, inventory console table, delete confirmation)
-- DashboardPage.test.tsx (catalog list, purchase interaction, stock decrement)
-Run and verify 100% test pass rate.
-```
-
-### Phase 8: Docker, Deployment & Documentation
-```
-Create multi-container Docker Compose setup (PostgreSQL 16, FastAPI backend, React Nginx frontend).
-Create backend/.env.example and frontend/.env.example.
-Create realistic database seeder (Toyota, Tesla, Porsche, BMW, Ford, Rivian, Hyundai, Mercedes).
-Generate docs/TEST_REPORT.md, INTERVIEW_NOTES.md, and production-grade README.md.
-```
+The project was structured into separate backend and frontend modules for maintainability.
 
 ---
 
-## AI Environment Notice
-The development agent environment executed all test suites and builds directly using Python 3.13 and Node.js v24. No simulated or fabricated test outputs were recorded.
+## Prompt 2 — Implement Authentication and Security
+
+### Prompt
+
+> Implement secure authentication and authorization for the Car Dealership Inventory System.
+>
+> Add user registration and login using JWT tokens.
+>
+> Passwords must be securely hashed.
+>
+> Add ADMIN and USER roles and protect administrator-only operations.
+>
+> Store sensitive values such as the JWT secret and database configuration using environment variables.
+>
+> Make sure `.env` files and database files are not committed to GitHub.
+
+### Answer / Result
+
+Authentication and security were implemented successfully.
+
+The backend includes:
+
+- User registration
+- User login
+- JWT access tokens
+- Secure password hashing
+- Current-user authentication
+- ADMIN and USER role checking
+- Protected vehicle operations
+- Environment-based configuration
+
+The `.gitignore` file was configured to exclude:
+
+- `.env`
+- `.venv`
+- `__pycache__`
+- `.pytest_cache`
+- Database files
+- Node modules
+- Build files
+
+The JWT secret is stored locally in `backend/.env` and is not uploaded to GitHub.
+
+---
+
+## Prompt 3 — Implement Vehicle Inventory and Search
+
+### Prompt
+
+> Implement the vehicle inventory functionality.
+>
+> Create APIs and frontend components for adding, viewing, updating, and deleting vehicles.
+>
+> Each vehicle should contain details such as make, model, year, price, mileage, fuel type, transmission, color, stock quantity, and availability.
+>
+> Add search and filtering functionality.
+>
+> Display vehicles as professional vehicle cards in the catalog and show inventory information on the dashboard.
+
+### Answer / Result
+
+The vehicle inventory system was implemented successfully.
+
+The system supports:
+
+- Add vehicle
+- View vehicles
+- Update vehicle
+- Delete vehicle
+- Vehicle search
+- Vehicle filtering
+- Stock quantity management
+- Availability status
+- Vehicle details
+- Responsive vehicle cards
+- Dashboard inventory statistics
+
+The frontend communicates with the FastAPI backend through REST APIs.
+
+The catalog dynamically loads vehicle information from the database.
+
+---
+
+## Prompt 4 — Implement Purchase and Restock
+
+### Prompt
+
+> Implement vehicle purchase and restock functionality.
+>
+> When a vehicle is purchased, decrease the available stock quantity.
+>
+> Prevent purchases when the vehicle is out of stock.
+>
+> When a vehicle is restocked, increase the available quantity.
+>
+> Make purchase and restock operations transactional so that inventory remains consistent.
+>
+> Add proper success and error messages to the frontend.
+
+### Answer / Result
+
+Purchase and restock functionality was implemented.
+
+The system now:
+
+- Decreases stock after a successful purchase
+- Prevents purchasing vehicles with zero stock
+- Increases stock when vehicles are restocked
+- Maintains consistent inventory quantities
+- Handles invalid operations with appropriate errors
+- Updates the frontend after inventory changes
+
+Transactional database operations were implemented to keep inventory data consistent.
+
+---
+
+## Prompt 5 — Test, Fix and Finalize the Application
+
+### Prompt
+
+> Test the complete Car Dealership Inventory System.
+>
+> Check the backend APIs, authentication, vehicle CRUD operations, search and filtering, purchase and restock functionality, frontend components, API connection, dashboard, catalog, and overall UI.
+>
+> Fix any errors found during testing.
+>
+> Make sure the application builds successfully and runs correctly.
+>
+> Verify that the project is clean and ready to be pushed to GitHub.
+
+### Answer / Result
+
+The complete application was tested and finalized.
+
+Backend testing successfully covered the major application functionality, including:
+
+- Authentication
+- Authorization
+- Vehicle CRUD
+- Vehicle search
+- Purchase
+- Restock
+- Database operations
+
+Frontend testing covered:
+
+- React components
+- Dashboard
+- Vehicle catalog
+- Authentication-related UI
+- API integration
+- User interactions
+
+The frontend production build was successfully generated.
+
+The FastAPI backend was successfully started using:
+
+```bash
+python -m uvicorn app.main:app --reload --port 8000
