@@ -338,11 +338,11 @@ FastAPI provides automated interactive documentation out of the box:
 | POST   | `/api/auth/register`       | No   | Public     | Register a new user account                  |
 | POST   | `/api/auth/login`          | No   | Public     | Authenticate and receive JWT access token    |
 | GET    | `/api/auth/me`             | Yes  | User/Admin | Retrieve current authenticated user profile  |
-| POST   | `/api/vehicles`            | Yes  | User/Admin | Add a new vehicle to catalog                 |
+| POST   | `/api/vehicles`            | Yes  | Admin | Add a new vehicle to catalog                 |
 | GET    | `/api/vehicles`            | Yes  | User/Admin | List all catalog vehicles with pagination    |
 | GET    | `/api/vehicles/search`     | Yes  | User/Admin | Search vehicles by make, model, price range  |
 | GET    | `/api/vehicles/{id}`       | Yes  | User/Admin | Get detailed vehicle information by ID       |
-| PUT    | `/api/vehicles/{id}`       | Yes  | User/Admin | Update vehicle specifications                |
+| PUT    | `/api/vehicles/{id}`       | Yes  | Admin | Update vehicle specifications                |
 | DELETE | `/api/vehicles/{id}`       | Yes  | Admin      | Permanently remove vehicle (Admin only)      |
 | POST   | `/api/vehicles/{id}/purchase` | Yes  | User/Admin | Purchase vehicle and decrement stock atomically |
 | POST   | `/api/vehicles/{id}/restock`  | Yes  | Admin      | Restock vehicle quantity (Admin only)        |
