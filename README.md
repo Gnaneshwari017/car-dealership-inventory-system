@@ -151,7 +151,7 @@ The project adheres to **Clean Architecture** and **SOLID principles**, isolatin
 ## Project Structure
 
 ```
-car-dealership-inventory/
+car-dealership-inventory-system/
 ├── backend/
 │   ├── alembic/                 # Database migration environments
 │   │   ├── versions/            # 001_initial_schema.py
