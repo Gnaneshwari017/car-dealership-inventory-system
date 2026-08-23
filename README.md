@@ -386,8 +386,8 @@ Example from the inventory purchase module:
 ### Quick Start
 ```bash
 # Clone the repository
-git clone https://github.com/gnaneshwari-dev/car-dealership-inventory.git
-cd car-dealership-inventory
+git clone https://github.com/Gnaneshwari017/car-dealership-inventory-system.git
+cd car-dealership-inventory-system
 ```
 
 ---
@@ -428,7 +428,7 @@ Services will be available at:
 ### Backend (`backend/.env`)
 ```env
 DATABASE_URL=sqlite:///./dealership.db
-JWT_SECRET=super-secret-production-jwt-key-2026-apex-dealership
+JWT_SECRET=your-secure-random-secret
 JWT_ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=1440
 CORS_ORIGINS=http://localhost:5173,http://localhost:3000,http://127.0.0.1:5173
@@ -586,7 +586,7 @@ The application UI includes realistic data and states:
 
 - **Branch**: `main`
 - **Commit Convention**: Conventional Commits (`feat:`, `test:`, `fix:`, `docs:`, `chore:`)
-- **Repository URL**: `https://github.com/gnaneshwari-dev/car-dealership-inventory`
+- **Repository URL**: `https://github.com/Gnaneshwari017/car-dealership-inventory-system`
 
 ---
 
