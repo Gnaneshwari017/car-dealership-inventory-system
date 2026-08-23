@@ -238,8 +238,8 @@ Latest local verification for this documentation update:
 | --- | --- |
 | Backend (`python -m pytest -q`) | 44 passed |
 | Frontend (`npm test`) | 7 test files passed; 27 tests passed |
-|Overall Result|
-| --- | --- |
+## Overall Result
+
 | Test Suite |  Tests | Result          |
 | ---------- | -----: | --------------- |
 | Backend    |     44 | ✅ Passed        |
