@@ -313,23 +313,44 @@ car-dealership-inventory-system/
 └── README.md
 ```
 
+
 ## 🖼️ Screenshots
 
-### Login
+### Homepage
 
-![Login screen](screenshots/login.svg)
+![Homepage](screenshots/homepage.png)
+
+### Register
+
+![Register](screenshots/register.png)
 
 ### Vehicle Catalog
 
-![Vehicle catalog](screenshots/dashboard.svg)
+![Vehicle Catalog](screenshots/buyer_page.png)
+
+### Complete Dashboard
+
+![Complete Dashboard](screenshots/complete_dashboard.png)
 
 ### Admin Dashboard
 
-![Admin dashboard](screenshots/admin_dashboard.svg)
+![Admin Dashboard](screenshots/admin_dashboard.png)
 
-### Vehicle Management
+### Add New Vehicle
 
-![Add vehicle](screenshots/add_vehicle.svg)
+![Add New Vehicle](screenshots/adding_new_vehicle.png)
+
+### Edit Vehicle
+
+![Edit Vehicle](screenshots/edit_vehicle.png)
+
+### Delete Vehicle
+
+![Delete Vehicle](screenshots/delete_vehicle.png)
+
+### Purchase Vehicle
+
+![Purchase Vehicle](screenshots/purchase_vehicle.png)
 
 ## 🤖 AI Usage
 
